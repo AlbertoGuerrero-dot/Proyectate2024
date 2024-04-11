@@ -19,6 +19,7 @@ router.post('/', (req, res) => {
                 res.status(500).json({ error: 'Error interno del servidor' });
             } else {
                 if (results.length > 0) { // Si se encuentra el empleado con el ID proporcionado
+                    console.log(id);
                     res.render('attendance.ejs', { results: results });
                 } else { // Si no se encuentra ningún empleado con el ID proporcionado
                     res.render('error.ejs', { message: 'No se encontró ningún empleado con el ID proporcionado.' });
